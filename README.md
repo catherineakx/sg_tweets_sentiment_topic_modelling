@@ -12,7 +12,7 @@ It has been more than a year since the COVID-19 pandemic started. The Ministry o
 * Working from home and online home-based learning.
 * Rollout of COVID-19 vaccinations.
 
-In the same timeframe, an increasing number of people in Singapore has sought help for mental health issues (source: [Ang & Phua, Apr 2020](https://www.channelnewsasia.com/singapore/covid-19-fear-toll-mental-health-hotline-anxiety-singapore-763336)). Concerns over the rising number of COVID-19 cases in the community, loss of employment, reduction in income, burnout from work, separation from loved ones, etc. have resulted in some feeling more anxious and uneasy. Concurrently, there are other groups of people who are seemingly unaffected by the COVID-19 pandemic – life goes on normally for them, with great work-life balance and indulging in luxurious experiences (source: [Warren, Mar 2021](https://www.insider.com/singapore-rich-spending-travel-luxury-hotels-pandemic-2021-3)).
+In the same timeframe, an increasing number of people in Singapore has sought help for mental health issues (source: [Ang & Phua, Apr 2020](https://www.channelnewsasia.com/singapore/covid-19-fear-toll-mental-health-hotline-anxiety-singapore-763336)). Concerns over the rising number of COVID-19 cases in the community, loss of employment, reduction in income, burnout from work, separation from loved ones, etc. have resulted in some feeling more anxious and uneasy. Concurrently, there are other groups of people who are seemingly unaffected by the COVID-19 pandemic – enjoying great work-life balance and indulging in luxurious experiences (source: [Warren, Mar 2021](https://www.insider.com/singapore-rich-spending-travel-luxury-hotels-pandemic-2021-3)).
 
 ---
 
@@ -23,31 +23,32 @@ Therefore, this project aims to leverage on tweets in Singapore from 1 January 2
 * What is the sentiment expressed in Singapore tweets?  
 * What are the common topics of discussion on Twitter?
 * How have the sentiments and topics of discussion changed over the past seven months in Singapore? 
-* What can the government of Singapore do to help members of the public to better cope with the pandemic?
+* What can the government of Singapore do to help members of the public better cope with the pandemic?
 
 ---
 
 ### Executive Summary
 
 *INTRODUCTION*
-When the first COVID-19 case in Singapore was announced on 23 January 2020, most people expected the COVID-19 pandemic to last for a couple of months, given its resemblance to the SARS (Severe Acute Respiratory Syndrome) virus outbreak in 2003. Fast forward to July 2021, the media is still reporting new COVID-19 cases in the community as well as new variants of COVID-19, constantly reminding us to take precaution when carrying out our day-to-day activities. 
+When the first COVID-19 case in Singapore was announced on 23 January 2020, most people expected the COVID-19 pandemic to last for a couple of months, given its resemblance to the SARS (Severe Acute Respiratory Syndrome) virus outbreak in 2003. Fast forward to August 2021, the media is still reporting new COVID-19 cases in the community and new COVID-19 variants, constantly reminding us to take precaution.
 
-With our lives becoming more intertwined with social media (where we are openly expressing our opinions on online platforms to people whom we have never met before), I'm keen to understand how people are reacting and adapting to life in the "new normal". The social media site that will be explored in this project is Twitter, which is a 'microblogging' platform that allows users to send and receive short posts (usually less than 280 characters) called tweets (source: [UKRI, Aug 2021](https://www.ukri.org/councils/esrc/impact-toolkit-for-economic-and-social-sciences/how-to-use-social-media/choosing-what-social-media-you-use/)).
+With our lives becoming more intertwined with social media (where we openly express our opinions on online platforms to netizens whom we have not met before), I was keen to understand how people in Singapore were reacting and adapting to life in the "new normal". The social media site that was explored in this project was Twitter, a 'microblogging' platform that allowed users to send and receive short posts (usually less than 280 characters) called tweets (source: [UKRI, Aug 2021](https://www.ukri.org/councils/esrc/impact-toolkit-for-economic-and-social-sciences/how-to-use-social-media/choosing-what-social-media-you-use/)).
 
 *METHODOLOGY*
 A data science workflow was introduced to conduct this analysis. Firstly, the problem statement was defined — I would like to understand the sentiment expressed in Singapore tweets, the common topics of discussion, how these aspects changed over the past seven months and what the government of Singapore could do to help members of the public better cope with the pandemic. 
 
-Next, tweets from 1 January 2021 to 31 July 2021 located near Singapore were extracted via webscraping using Twint API. An exploratory data analysis was conducted to understand the distribution of the tweets over the seven months as well as any patterns and trends associated with the number of likes, replies, retweets, mentions, hashtags, etc. New features such as the character length and word count of the tweets were engineered, and relationships were visualized with a series of bar charts, histograms and boxplots. Commonly occurring one-word, two-word and three-word phrases were also identified and visualized using bar charts and word cloud.
+Next, tweets from 1 January 2021 to 31 July 2021 located near Singapore were extracted via webscraping Twitter using Twint API. An exploratory data analysis was conducted to understand the distribution of the tweets over the seven months as well as any patterns and trends associated with the number of likes, replies, retweets, mentions, hashtags, etc. New features such as the character length and word count of the tweets were engineered, and relationships were visualized with a series of bar charts, histograms and boxplots. Commonly occurring one-word, two-word and three-word phrases were also identified and visualized using bar charts and word cloud.
 
-To conduct a sentiment analysis for determining the sentiment of the tweets, Natural Language Processing (NLP) techniques and various packages were utilised, such as VADER (Valence Aware Dictionary for sEntiment Reasoning), TextBlob and a pre-trained Long Short-Term Memory (LSTM) Recurrent Neural Network (RNN) model. As the tweets were unlabelled, VADER and TextBlob could be employed to predict the tweets' sentiment without any training data. For LSTM RNN, it was slightly trickier as the model was first trained on labelled tweets from Sentiment140 (source: [Sentiment140, 2021](http://help.sentiment140.com/for-students)) and obtained an accuracy score of 79.6%. The model was then used to predict the sentiment for Singapore tweets in the odd months (January, March, May and July), in which a new LSTM RNN model was created from these predictions and achieved a higher accuracy score of 86.4%. This new model was then employed in the prediction of the sentiment for Singapore tweets in the even months (February, April and June). 
+To conduct a sentiment analysis for determining the sentiment of the tweets, Natural Language Processing (NLP) techniques and various packages were utilised, such as VADER (Valence Aware Dictionary for sEntiment Reasoning), TextBlob and a pre-trained Long Short-Term Memory (LSTM) Recurrent Neural Network (RNN) model. As the tweets were unlabelled, VADER and TextBlob could be employed to predict the tweets' sentiment without any training data. For LSTM RNN, a model was first trained on labelled tweets from Sentiment140 (source: [Sentiment140, 2021](http://help.sentiment140.com/for-students)) and it obtained an accuracy score of 79.6%. The model was then used to predict the sentiment for Singapore tweets in the odd months (January, March, May and July), in which a new LSTM RNN model was created from these predictions and achieved a higher accuracy score of 86.4%. This new model was then employed in the prediction of the sentiment for Singapore tweets in the even months (February, April and June). 
 
-For topic modelling, Latent Dirichlet Allocation (LDA) from Gensim was employed to identify the optimal number of topics from the tweets and contents surrounding them, to understand the commonly discussed pointers on Twitter. Relationships between the topics and their keywords, as well as between the topics and their sentiment, were visualized. Concurrently, external research about announcements and events that occurred in Singapore and notable events around the world in the past seven months was carried out, to understand factors that could have affected the sentiment labels. 
-Last but not the least, a dashboard featuring some of the visualizations was created using Plotly and Dash, allowing for easier reference to trends, sentiment and topics of Singapore tweets from January to July 2021. 
+For topic modelling, Latent Dirichlet Allocation (LDA) from Gensim was employed to identify the optimal number of topics from the tweets and contents surrounding them, to understand the commonly discussed pointers. Relationships between the topics and their keywords, as well as between the topics and their sentiment, were visualized. Concurrently, external research about announcements and events that occurred in Singapore and notable events around the world in the past seven months was carried out, to understand factors that could have affected the sentiment labels. 
+
+Last but not the least, a dashboard featuring some of the key visualizations was created using Plotly and Dash and deployed onto PythonAnywhere, allowing for easier reference to trends, sentiment and topics of Singapore tweets from January to July 2021. 
 
 *FINDINGS*
-In the first seven months of 2021, it can be observed that overall, the proportion of positive tweets (64.9%) is close to 2x that of negative tweets (35.1%). This indicates that despite the prevalence of COVID-19 virus and various social issues, the community seems to have remained positive.
+In the first seven months of 2021, it could be observed that overall, the proportion of positive tweets (64.9%) was close to 2x that of negative tweets (35.1%). This indicated that despite the prevalence of COVID-19 virus and various social issues, the community seemed to have remained positive.
 
-As for the dominant topics present in the tweets, they include discussions related to COVID-19 cases, clusters and vaccinations, recreational activities in Singapore, military coup in Myanmar, and even political affairs in the United States of America.
+As for the dominant topics present in the tweets, they included discussions related to COVID-19 cases, clusters and vaccinations, recreational activities in Singapore, military coup in Myanmar, and even political affairs in the United States of America.
 
 ---
 
@@ -60,9 +61,12 @@ There are a total of five main notebooks in this project, namely:
 4. Topic Modelling & Conclusion
 5. Plotly & Dash Visualization
 
+The key visualizations can be viewed on [PythonAnywhere: cakx1508.pythonanywhere.com](https://cakx1508.pythonanywhere.com/).
+<img src='./images/graphs.PNG' width=1000 align=center>
+
 ---
 
-### Data Dictionary & Datasets
+### Data Dictionary, Datasets & Pre-trained Models
 
 | Feature | Type | Dataset | Description  |
 |:--------|:----:|:-------:|:-------------|
@@ -86,6 +90,12 @@ Note: 'all tweets datasets' refers to the following datasets used in this analys
 * [sg_tweets_may_2021.csv](../datasets/sg_tweets_may_2021.csv) — Singapore tweets in May 2021
 * [sg_tweets_jun_2021.csv](../datasets/sg_tweets_jun_2021.csv) — Singapore tweets in June 2021
 * [sg_tweets_jul_2021.csv](../datasets/sg_tweets_jul_2021.csv) — Singapore tweets in July 2021
+
+As GitHub has a file size limit of 100MB, all datasets and models used throughout the notebooks can be found on the respective Google Drive links: 
+* [Datasets](https://drive.google.com/drive/folders/14phuEBHU_jqj4uHLvwGj4H2N6XQjccMi?usp=sharing)
+* [Models](https://drive.google.com/drive/folders/1L9QQPf9bHM3D5ZaF4wwD7xMMLNdOSYK2?usp=sharing)
+
+Do download the files from Google Drive and placed them in the 'datasets' and 'models' folders appropriately. 
 
 ---
 
