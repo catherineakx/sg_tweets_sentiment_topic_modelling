@@ -61,8 +61,8 @@ There are a total of five main notebooks in this project, namely:
 4. Topic Modelling & Conclusion
 5. Plotly & Dash Visualization
 
-The key visualizations can be viewed on [PythonAnywhere: cakx1508.pythonanywhere.com](https://cakx1508.pythonanywhere.com/).
-<img src='./images/graphs.PNG' width=1000 align=center>
+The key visualizations can be viewed on [cakx1508.pythonanywhere.com](https://cakx1508.pythonanywhere.com/).
+<img src='./images/graphs.png' width=1000 align=center>
 
 ---
 
@@ -91,11 +91,11 @@ Note: 'all tweets datasets' refers to the following datasets used in this analys
 * [sg_tweets_jun_2021.csv](../datasets/sg_tweets_jun_2021.csv) — Singapore tweets in June 2021
 * [sg_tweets_jul_2021.csv](../datasets/sg_tweets_jul_2021.csv) — Singapore tweets in July 2021
 
-As GitHub has a file size limit of 100MB, all datasets and models used throughout the notebooks can be found on the respective Google Drive links: 
+As GitHub has a file size limit of 100MB, all datasets and models used throughout the notebooks can be found in the respective Google Drive links: 
 * [Datasets](https://drive.google.com/drive/folders/14phuEBHU_jqj4uHLvwGj4H2N6XQjccMi?usp=sharing)
 * [Models](https://drive.google.com/drive/folders/1L9QQPf9bHM3D5ZaF4wwD7xMMLNdOSYK2?usp=sharing)
 
-Do download the files from Google Drive and placed them in the 'datasets' and 'models' folders appropriately. 
+Do download the files from Google Drive and placed them in the 'datasets' and 'models' folders respectively. 
 
 ---
 
